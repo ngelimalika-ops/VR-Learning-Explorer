@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive computer networking learning experience.">
+  <title>VR Learning Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">🌐 VR Learning Explorer</div>
+    <span class="status">● Learning mode</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">YOUR VIRTUAL LEARNING SPACE</p>
+      <h1>Explore the world of computer networks</h1>
+      <p>
+        Discover how computers communicate, explore network
+        devices and test your knowledge.
+      </p>
+      <button id="startButton" class="primary">
+        Start exploring →
+      </button>
+    </section>
+
+    <section class="learning-section" id="learning">
+      <h2>Explore your network</h2>
+      <p class="muted">Select any device to learn how it works.</p>
+
+
+ 
+<div class="simulation">
+  <h2>🚀 Network Data Simulation</h2>
+  <p>Watch how data travels across a network.</p>
+
+  <div class="simulation-track" id="simulationTrack">
+    <span class="packet" id="packet">●</span>
+  </div>
+
+  <div class="simulation-labels">
+    <span>💻 Computer</span>
+    <span>📡 Router</span>
+    <span>🖥️ Server</span>
+  </div>
+
+  <button class="primary" id="simulateButton">
+    Start Data Transfer
+  </button>
+
+  <p id="simulationStatus" aria-live="polite">
+    Ready to send data.
+  </p>
+</div>
+
+<section class="dashboard">
+  <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+  <h2>Networking Learning Center</h2>
+  <p>Explore lessons and develop your networking skills.</p>
+
+  <div class="progress-card">
+    <h3>Learning Progress</h3>
+    <p id="lessonProgress">0 of 6 lessons completed</p>
+    <div class="progress-track">
+      <div id="lessonProgressFill"></div>
+    </div>
+  </div>
+
+  <div class="lesson-grid" id="lessonGrid"></div>
+
+  <article class="lesson-content" id="lessonContent">
+    <h3>Welcome to your lessons!</h3>
+    <p>Select a lesson to begin learning.</p>
+  </article>
+</section>
+
+<section class="virtual-lab" id="virtualLab">
+  <p class="eyebrow">HANDS-ON PRACTICE</p>
+  <h2>🧪 Virtual Networking Laboratory</h2>
+  <p class="muted">Select equipment to inspect your virtual network.</p>
+
+  <div class="lab-equipment">
+    <button class="lab-device" data-lab="PC-01">
+      💻
+      <span>PC-01</span>
+    </button>
+
+    <button class="lab-device" data-lab="SW-01">
+      🖧
+      <span>Switch</span>
+    </button>
+
+    <button class="lab-device" data-lab="RT-01">
+      📡
+      <span>Router</span>
+    </button>
+
+    <button class="lab-device" data-lab="SR-01">
+      🖥️
+      <span>Server</span>
+    </button>
+  </div>
+
+  <div class="lab-info" id="labInfo">
+    <h3>Welcome to the laboratory!</h3>
+    <p>Select a device to inspect it.</p>
+  </div>
+
+  <div class="lab-controls">
+    <button class="primary" id="testNetwork">Test Connection</button>
+    <button class="secondary" id="resetLab">Reset Laboratory</button>
+  </div>
+
+  <p id="labStatus" aria-live="polite">Network ready for testing.</p>
+</section>
+
+<section class="immersive-room" id="immersiveRoom">
+  <p class="eyebrow">VERSION 1.0</p>
+  <h2>🌐 Immersive Network Room</h2>
+  <p>Explore your virtual networking laboratory.</p>
+
+  <div class="room">
+    <div class="room-wall">
+      <h3>NETWORK CONTROL CENTER</h3>
+
+      <div class="room-devices" id="roomDevices">
+        <button data-room="computer">💻<span>Computer</span></button>
+        <button data-room="router">📡<span>Router</span></button>
+        <button data-room="switch">🖧<span>Switch</span></button>
+        <button data-room="server">🖥️<span>Server</span></button>
+      </div>
+    </div>
+    <div class="room-floor"></div>
+  </div>
+
+  <div class="room-controls">
+    <button id="moveLeft">← Left</button>
+    <button id="moveForward">↑ Forward</button>
+    <button id="moveBack">↓ Back</button>
+    <button id="moveRight">→ Right</button>
+  </div>
+
+  <p id="roomMessage">Select a device or use the movement controls.</p>
+  <div id="roomInformation"></div>
+</section>
+
+
+
+  <div class="network-line">│</div>
+
+  <div class="network-row">
+    <button class="node" data-device="switch">
+      🖧<span>Switch</span>
+    </button>
+
+    <button class="node" data-device="server">
+      🖥️<span>Server</span>
+    </button>
+
+    <button class="node" data-device="accessPoint">
+      📶<span>Access Point</span>
+    </button>
+  </div>
+
+</div>
+
+      <article class="information" id="information">
+        <h3>Welcome, Explorer!</h3>
+        <p>Select a network device above to discover its purpose.</p>
+      </article>
+    </section>
+
+    <section class="challenge">
+      <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+      <h2>Networking challenge</h2>
+      <p id="question">Which device directs data between different networks?</p>
+
+      <div class="answers">
+        <button class="answer" data-answer="computer">Computer</button>
+        <button class="answer" data-answer="router">Router</button>
+        <button class="answer" data-answer="server">Server</button>
+      </div>
+
+      <p id="feedback" aria-live="polite"></p>
+      <p id="score">Score: 0</p>
+      <button id="nextButton" class="secondary">Next question</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>VR Learning Explorer · Learn by exploring</p>
+  </footer>
+
+  
+  <section class="command-terminal">
+  <p class="eyebrow">VERSION 1.1 — PRACTICAL TRAINING</p>
+  <h2>💻 Network Command Terminal</h2>
+  <p>Practise basic networking commands in a simulated terminal.</p>
+
+  <div class="terminal-window">
+    <div class="terminal-header">NETWORK TERMINAL</div>
+
+    <div id="terminalOutput">
+      <p>Welcome to Network Terminal!</p>
+      <p>Type <strong>help</strong> to see available commands.</p>
+    </div>
+
+    <div class="terminal-input-row">
+      <span>student@network:~$</span>
+      <input id="terminalInput" type="text"
+             placeholder="Enter a command..." autocomplete="off">
+      <button id="runCommand">Run</button>
+    </div>
+  </div>
+</section>
+
+<section class="topology-section">
+  <h2>Network Topology Builder</h2>
+  <p>Add devices and connect them to build your own network.</p>
+
+  <div class="builder-controls">
+    <select id="builderDeviceType">
+      <option value="Computer">Computer</option>
+      <option value="Router">Router</option>
+      <option value="Switch">Switch</option>
+      <option value="Server">Server</option>
+    </select>
+    <button id="addBuilderDevice">Add Device</button>
+    <button id="connectBuilderDevices">Connect Selected</button>
+    <button id="clearBuilder">Reset Network</button>
+  </div>
+
+  <p id="builderStatus">Add devices to begin building your network.</p>
+
+  <div id="builderCanvas">
+    <svg id="topologyLines"></svg>
+    <div id="builderNodes"></div>
+  </div>
+
+  <h3>Network Connections</h3>
+  <ul id="builderConnections">
+    <li>No connections yet.</li>
+  </ul>
+</section>
+
+<section class="simulator-section">
+  <h2>Network Connectivity Simulator</h2>
+  <p>Test communication between devices in your network.</p>
+
+  <div class="simulator-controls">
+    <label for="sourceDevice">Source Device</label>
+    <select id="sourceDevice"></select>
+
+    <label for="destinationDevice">Destination Device</label>
+    <select id="destinationDevice"></select>
+
+    <button id="testConnectivity">Test Connection</button>
+  </div>
+
+  <div id="simulationResult">
+    Waiting for a connectivity test...
+  </div>
+
+  <h3>Network Route</h3>
+  <div id="simulationRoute">
+    No route tested yet.
+  </div>
+
+<div class="packet-controls">
+  <button id="sendPacket">🚀 Send Data Packet</button>
+  <p id="packetStatus">Ready to send data.</p>
+</div>
+
+
+<div class="network-monitor">
+  <h3>📊 Network Performance Dashboard</h3>
+
+  <div class="monitor-grid">
+    <div class="monitor-card">
+      <span>Packets Sent</span>
+      <strong id="packetsSent">0</strong>
+    </div>
+
+    <div class="monitor-card">
+      <span>Delivered</span>
+      <strong id="packetsDelivered">0</strong>
+    </div>
+
+    <div class="monitor-card">
+      <span>Packets Lost</span>
+      <strong id="packetsLost">0</strong>
+    </div>
+
+    <div class="monitor-card">
+      <span>Latency</span>
+      <strong id="networkLatency">0 ms</strong>
+    </div>
+  </div>
+
+  <label class="loss-option">
+    <input type="checkbox" id="simulatePacketLoss">
+    Simulate packet loss (30% chance)
+  </label>
+
+  <button type="button" id="resetStatistics">
+    Reset Statistics
+  </button>
+</div>
+
+  <button id="clearSimulation">Clear Test Results</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
